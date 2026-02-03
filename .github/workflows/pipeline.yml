@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      -Main
+      - Main
   workflow_dispatch:
 
 jobs:
@@ -12,6 +12,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@y4
+        uses: actions/checkout@v4
+        
       - name: Build docker image
-        run: docker build -t spring-boot-app:latest
+        run: docker build -t spring-boot-app:latest .
